@@ -1,0 +1,788 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Teko:wght@300..700&display=swap');
+
+:root {
+    --primary-color: #16ACAA;
+    --text-dark: #222429;
+    --text-light: #686A6F;
+
+    --teko: 'teko', 'sans-serif';
+    --rubik: 'rubik', 'sans serif';
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--teko) !important;
+}
+
+body {
+    font-family: var(--rubik);
+}
+
+/* navigation link */
+.navigation {
+    /* position: sticky;
+    top: 0; */
+    z-index: 5;
+    width: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.128);
+}
+
+.navAnimation {
+    animation: navAnimation 1s ease forwards;
+    /* Removed !important */
+}
+
+@keyframes navAnimation {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.navigation nav a:last-of-type {
+    color: white;
+    background-color: #FFAA17;
+    padding: 5px 10px;
+}
+
+.navigation .row {
+    padding: 30px 0;
+}
+
+nav a {
+    font-family: var(--teko);
+    font-size: 1.7vw;
+    text-decoration: none;
+    margin: 0 15px;
+    color: rgb(88, 88, 88);
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+nav a::after,
+nav a::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #16ACAA;
+    position: absolute;
+    bottom: -10px;
+    transition: all 0.5s ease;
+}
+
+nav a::after {
+    left: 50%;
+}
+
+nav a::before {
+    left: 51%;
+}
+
+nav a:hover,
+nav a.active {
+    color: black;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 50%;
+}
+
+nav a:hover::before,
+nav a.active::before {
+    width: 50%;
+    transform: translateX(-100%);
+}
+
+.header-contact a {
+    text-decoration: none;
+}
+
+.header-contact a:hover .header-contact-info p:last-child {
+    text-decoration: underline;
+}
+
+.header-contact-info {
+    padding: 0 !important;
+    font-family: var(--rubik);
+    font-size: 1.2vw;
+}
+
+.header-contact-info p:first-child {
+    color: var(--text-light) !important;
+    letter-spacing: 2px;
+}
+
+.call-img img {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.header-contact-info p:last-child {
+    color: var(--text-dark) !important;
+    font-size: 1.6vw !important;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #222429;
+    height: 600px !important;
+    overflow-y: scroll !important;
+    transform: translate(-200%);
+    transition: all 0.5s !important;
+    z-index: 5;
+}
+
+.mobile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2vw;
+}
+
+.mobile-links a {
+    display: block !important;
+    width: 100%;
+    padding-top: 10px;
+    font-family: var(--teko);
+    text-decoration: none;
+    font-size: 5vw;
+    color: var(--text-light);
+    border-top: 1px solid var(--text-light);
+    transition: all 0.5s;
+}
+
+.mobile-links a:hover,
+.mobile-links .active {
+    color: var(--primary-color);
+}
+
+.mobile-links a:last-of-type {
+    background-color: #FFAA17;
+    color: white;
+    padding: 0 20px;
+    border: none;
+}
+
+.mobile-menu p {
+    color: var(--text-light);
+    margin-top: 20px;
+    font-size: 3.5vw;
+}
+
+.mobile-menu .mobile-contact a {
+    text-decoration: none;
+    color: white;
+    font-size: 3.5vw;
+    transition: all 0.5s;
+}
+
+.mobile-menu .mobile-contact a:hover {
+    color: #FFAA17;
+    text-decoration: underline;
+}
+
+.mobile-menu .mobile-icons a i {
+    width: 50px;
+    height: 50px;
+    background-color: #1C1E22;
+    color: var(--text-light);
+    font-size: 4.5vw;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.mobile-menu .mobile-icons a i:hover {
+    color: var(--primary-color);
+}
+
+.btn-mobile {
+    border: none;
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 0;
+}
+
+/* slider */
+
+.banner .slide {
+    position: relative;
+    min-height: 100vh;
+}
+
+.banner .slide p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    color: white;
+    animation: textAnimation 1s ease 0.8s forwards;
+}
+
+
+
+@keyframes textAnimation {
+    from {
+        bottom: 10%;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+.banner .slide img {
+    min-height: 100vh;
+}
+
+.owl-prev,
+.owl-next {
+    position: absolute;
+    top: 40%;
+    font-size: 2vw !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+.owl-prev:hover,
+.owl-next:hover {
+    background-color: white !important;
+}
+
+.owl-prev {
+    left: 20px;
+}
+
+.owl-next {
+    right: 20px;
+}
+
+.about-us {
+    width: 100%;
+    background-image: url("https://truptman.com/wp-content/uploads/2021/01/pattern-2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cilture-content span {
+    color: var(--primary-color);
+}
+
+.service-card {
+    transition: all 0.2s linear;
+}
+
+.service-card:hover {
+    background-color: rgba(219, 219, 219, 0.149) !important;
+}
+
+.service-card ul {
+    color: var(--text-light);
+}
+
+.our-works-links span {
+    /* text-decoration: none; */
+    color: rgb(152, 152, 152);
+    margin: 0 20px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.active-our-works-links {
+    color: black !important;
+}
+
+.active-our-works-links::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #16ACAA;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    animation: workLine 1s ease forwards;
+}
+
+@keyframes workLine {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.our-work-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-sizing: border-box;
+    animation: workCardAnimation 1s ease forwards;
+    transition: all 0.5s ease;
+}
+
+
+@keyframes workCardAnimation {
+    from {
+        scale: 0;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+.our-work-card .our-work-info {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: -50%;
+    left: 50%;
+    background-color: rgb(16, 16, 16);
+    width: 80%;
+    padding: 20px 40px;
+    color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+}
+
+.our-work-card img {
+    border-radius: 10px;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+}
+
+.our-work-card .our-work-info p:first-of-type::after {
+    content: '';
+    width: 20%;
+    height: 2px;
+    background-color: #16ACAA;
+    position: absolute;
+    top: 60%;
+    left: 65%;
+}
+
+.our-work-card:hover .our-work-info,
+.our-work-card img {
+    bottom: 0;
+}
+
+.our-work-card:hover img {
+    filter: grayscale(0%);
+}
+
+/* accordian */
+.accordion-button:not(.collapsed) {
+    background-color: transparent !important;
+}
+
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+
+.accordion-button,
+.accordion-item {
+    border-radius: 10px !important;
+}
+
+/* form */
+.form-control,
+.form-select {
+    background-color: #F4F5F8 !important;
+    padding: 20px !important;
+    resize: none !important;
+    border-color: #F4F5F8 !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: none !important;
+    border-color: var(--primary-color) !important;
+}
+
+.form .submit-btn {
+    width: 50%;
+    font-family: var(--teko);
+    cursor: pointer;
+    background-color: #16ACAA;
+    position: relative;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+.form .submit-btn::after {
+    content: '';
+    width: 10%;
+    height: 200%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+    transform: rotate(25deg);
+    opacity: 0.2;
+    z-index: -1;
+    transition: all 1s ease;
+}
+
+.form .submit-btn:hover {
+    color: white;
+}
+
+.form .submit-btn:hover::after {
+    opacity: 0.5;
+    transform: rotate(0deg);
+    top: -70px;
+    width: 200%;
+    height: 300%;
+}
+
+.form-msg {
+    color: red;
+    margin: 10px 0 0 5px;
+    display: inline-block;
+}
+
+.errorMessage {
+    padding: 10px 0;
+    border: 2px solid #ffb900;
+}
+
+.slogn-container {
+    background-color: #1C1E22;
+    padding: 50px 100px;
+    color: white;
+}
+
+.slogn-container .material-symbols-outlined {
+    color: black;
+    font-size: 4vw;
+    padding: 20px;
+    background-color: #16ACAA;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.career .slogn-container .slogn-circle {
+    width: 50px;
+    background: rgb(165, 165, 165);
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    left: -10px;
+    border-radius: 50%;
+    z-index: -2;
+}
+
+.slogn-container .slogn span {
+    color: var(--primary-color);
+}
+
+.client-logo img {
+    width: 120px !important;
+    margin: 0 auto;
+}
+
+#Client-slider .owl-stage {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.contact-us .contact-details {
+    background-color: #1C1E22;
+    background-image: url('https://truptman.com/wp-content/themes/linoor/assets/images/background/contact-bg-1-1.png');
+    background-size: cover;
+    color: rgb(158, 158, 158);
+}
+
+.contact-us .contact-details .contact-info .contact-card span {
+    background-color: #16ACAA;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: #1C1E22;
+    justify-content: center;
+}
+
+.contact-data p:first-of-type {
+    font-family: var(--teko);
+    margin: 0;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.contact-label-container {
+    padding: 50px 0 0 0;
+}
+
+.contact-label {
+    background-color: var(--primary-color);
+    transform: translate(0, 50px);
+}
+
+.contact-label-container .contact-label a {
+    display: inline-block;
+    background-color: black;
+    text-decoration: none;
+    font-size: 1.5vw;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.contact-label-container .contact-label a::after {
+    content: '';
+    width: 10%;
+    height: 200%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 10px;
+    transform: rotate(25deg);
+    opacity: 0.2;
+    z-index: -1;
+    transition: all 1s ease;
+}
+
+.contact-label-container .contact-label a:hover {
+    color: black;
+}
+
+.contact-label-container .contact-label a:hover::after {
+    opacity: 1;
+    transform: rotate(0deg);
+    top: -80px;
+    width: 200%;
+    height: 350%;
+}
+
+.footer {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-image: url('https://truptman.com/wp-content/themes/linoor/assets/images/background/footer-bg.png');
+    background-color: #222429;
+    color: rgb(192, 192, 192);
+}
+
+.info-details p {
+    line-height: 3vw;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5vw;
+}
+
+.social-links a {
+    width: 3.5vw;
+    height: 3.5vw;
+    background-color: #1C1E22;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #d2d2d2;
+    transition: all 0.5s;
+}
+
+.social-links a i {
+    font-size: 1.4vw;
+}
+
+.social-links a:hover {
+    background-color: #16ACAA;
+    color: white;
+}
+
+.info-details .info-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5vw;
+    margin: 10px;
+}
+
+.info-details .info-links a {
+    text-decoration: none;
+    color: #d2d2d2;
+    position: relative;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.info-details .info-links a:hover {
+    color: white;
+}
+
+.info-details .info-links a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -200%;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 2px;
+    transition: all 0.5s;
+}
+
+.info-details .info-links a:hover::after {
+    left: 0;
+}
+
+.info-card {
+    display: flex;
+    gap: 1vw;
+}
+
+.info-card p {
+    transition: all 0.5s;
+}
+
+.info-card p:hover {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+}
+
+.info-card span {
+    color: #16ACAA;
+    margin: 10px 0 0 0;
+}
+
+.info-details .newsletter-email {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.info-details input {
+    width: 100%;
+    padding: 20px;
+    background-color: #1C1E22;
+    color: #686A6F;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1.2vw;
+}
+
+.info-details input:focus {
+    outline: 1px solid #16ACAA;
+}
+
+.info-details .mail-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: -1vw;
+    width: 3vw;
+    height: 3vw;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    background-color: #16ACAA;
+    border: none;
+    color: #1C1E22;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.info-details .mail-icon:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.footer-info {
+    border-top: 1px solid #686A6F;
+}
+
+@media screen and (max-width:768px) {
+    .our-work-card .our-work-info {
+        width: 50% !important;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .social-links a {
+        width: 5.5vw;
+        height: 5.5vw;
+    }
+
+    .social-links a i {
+        font-size: 2.4vw;
+    }
+
+    .info-card span {
+        margin: 0;
+    }
+
+    .info-details .mail-icon {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .info-details input,
+    .contact-us .contact-label-container .contact-label a {
+        font-size: 2.4vw;
+    }
+
+    .info-details p {
+        line-height: 7vw;
+    }
+}
+
+/* get a quote page */
+
+.quote-content p,
+.quote-content a {
+    text-decoration: none;
+    color: #7A7A7A;
+    transition: all 0.5s;
+}
+
+.quote-content a:hover {
+    text-decoration: underline;
+}
